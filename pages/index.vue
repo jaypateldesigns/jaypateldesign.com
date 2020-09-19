@@ -1,65 +1,73 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        jaypateldesign.com
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+    <div class="home-details">
+      <span class="greetings">Hi, I am</span>
+      <h1>Jay Patel</h1>
+      <TypeEffect />
+      <span class="leading"
+        >I like to design and build beautifully crafted Websites.</span
+      >
+      <div class="button">
+        <nuxt-link to="/contact">
+          Hire Me
+        </nuxt-link>
       </div>
+      <ul class="social">
+        <li>
+          <a href="https://www.facebook.com/jaypatel1203" target="_blank">
+            <FacebookIcon />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/jaypatel1203" target="_blank">
+            <InstagramIcon />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/jaypateldesigns" target="_blank">
+            <GithubIcon />
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.linkedin.com/in/jay-patel-b4a45643/"
+            target="_blank"
+          >
+            <LinkedinIcon />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="home-hero-image">
+      <img src="~/assets/images/jay-hero-image.png" />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import {
+  FacebookIcon,
+  GithubIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  // MailIcon,
+} from 'vue-feather-icons';
+import TypeEffect from '../components/TypeEffect';
+export default {
+  components: {
+    TypeEffect,
+    FacebookIcon,
+    InstagramIcon,
+    GithubIcon,
+    LinkedinIcon,
+    // MailIcon,
+  },
+};
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.jpd-container {
+  width: 100%;
 }
 </style>

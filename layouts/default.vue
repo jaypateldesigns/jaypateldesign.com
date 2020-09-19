@@ -1,55 +1,84 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="app">
+    <aside class="app-sidebar">
+      <div class="app-sidebar-image">
+        <img src="~/assets/images/jay-sidebar.jpg" />
+      </div>
+      <div class="app-sidebar-logo">
+        <Logo />
+      </div>
+      <nav class="app-nav">
+        <ul>
+          <nuxt-link to="/">
+            <li>
+              <HomeIcon size="16" />
+              <label>Home</label>
+            </li>
+          </nuxt-link>
+
+          <nuxt-link to="/about">
+            <li>
+              <UserIcon size="16" />
+              <label>About</label>
+            </li>
+          </nuxt-link>
+          <nuxt-link to="/skills">
+            <li>
+              <TargetIcon size="16" />
+              <label>Skills</label>
+            </li>
+          </nuxt-link>
+          <nuxt-link to="/education">
+            <li>
+              <BookIcon size="16" />
+              <label>Education</label>
+            </li>
+          </nuxt-link>
+          <nuxt-link to="/experience">
+            <li>
+              <BriefcaseIcon size="16" />
+              <label>Experience</label>
+            </li>
+          </nuxt-link>
+          <nuxt-link to="/contact">
+            <li>
+              <MailIcon size="16" />
+              <label>Contact</label>
+            </li>
+          </nuxt-link>
+        </ul>
+      </nav>
+    </aside>
+    <section class="app-content">
+      <Nuxt />
+    </section>
+    <div class="app-mobile-logo">
+      <Logo width="80" />
+    </div>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+import {
+  HomeIcon,
+  UserIcon,
+  MailIcon,
+  BookIcon,
+  BriefcaseIcon,
+  TargetIcon,
+} from 'vue-feather-icons';
+import Logo from '../components/Logo';
+export default {
+  components: {
+    Logo,
+    HomeIcon,
+    UserIcon,
+    MailIcon,
+    BookIcon,
+    BriefcaseIcon,
+    TargetIcon,
+  },
+};
+</script>
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>
+<style></style>
